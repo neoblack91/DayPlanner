@@ -13,9 +13,24 @@ if (hourPlan.indexof("am")){
     console.log(currentHour)
 }
 
+// able to add different colors depend on pass events
+$("time-block").each(function(){
+let present=parseInt($(this).attr("id"))
 
+if(currentHour > present){
+    $(this).addClass("Past")
+    console.log=("past wow it looks so different")
+}
+else if (present === currentHour){
+    $(this).addClass("present")
+}
+ else {(present < currentHour)
+$(this).addClass("future")
+}
+
+})
 
 // able to save the events on calendar
-// able to add different colors depend on pass events
+
 
 
