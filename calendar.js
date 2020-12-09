@@ -37,10 +37,20 @@ function timetravel(){
 
     })
 }
+$(document).ready(function () {
+        if (localStorage) {
+        
+            if (localStorage.message) {
+            $("#textarea").val(localStorage.textarea);
+            }
+            }
 
-var savebtn = document.querySelectorAll("save")
-$( "#savebtn" ).click(function() {
-    console.log("hello");
-  });
+           $( "#savebtn" ).click(function() { 
+      
+                $("input[type=text],select,textarea").change(function(){
+                $this = $(this);
+                localStorage[$this.attr("")] = $this.val();
+                });
+            });
 
-
+        })
