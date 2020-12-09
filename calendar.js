@@ -4,33 +4,43 @@ $("#currentDay").text(luxon.DateTime.local().toLocaleString({
 
 //  Make the calendar editable
 function timetravel(){
-let hourPlan = luxon.DateTime.local().toLocaleString({hour: 2-digit})
-}
+    let hourPlan = luxon.DateTime.local().toLocaleString({hour: 2-digit})
 
-let currentHour =parseInt(hourPlan[0] + hourPlan[1])
-if (hourPlan.indexof("am")){
+
+    if (hourPlan !== undefined){}
+
+    let currentHour =parseInt(hourPlan[0] + hourPlan[1])
+
+    if (hourPlan.indexof("am")!== +1){
     currentHour -=12
-    console.log(currentHour)
-}
+    // console.log(currentHour)
+    }
 
 // able to add different colors depend on pass events
-$("time-block").each(function(){
-let present=parseInt($(this).attr("id"))
+    $("time-block").each(function(){
+    let present=parseInt($(this).attr("id"))
 
-if(currentHour > present){
-    $(this).addClass("Past")
-    console.log=("past wow it looks so different")
+        if(currentHour > present){
+        $(this).addClass("Past")
+        $row.css ("background-color","#d3d3d3")
+    
+        console.log=("past wow it looks so different")
+        }
+        else if (present === currentHour){
+        $(this).addClass("present")
+        $row.css ("background-color","#ff6961")
+        }
+        else {(present < currentHour)
+        $(this).addClass("future")
+        $row.css ("background-color","#77dd77")
+        }
+
+    })
 }
-else if (present === currentHour){
-    $(this).addClass("present")
-}
- else {(present < currentHour)
-$(this).addClass("future")
-}
 
-})
-
-// able to save the events on calendar
-
+var savebtn = document.querySelectorAll("save")
+$( "#savebtn" ).click(function() {
+    console.log("hello");
+  });
 
 
