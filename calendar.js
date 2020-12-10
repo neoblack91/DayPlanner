@@ -1,22 +1,26 @@
 $(document).ready(function () {
-// interactive day planner
-$("#currentDay").text(luxon.DateTime.local().toLocaleString({
+
+    // interactive day planner
+
+    $("#currentDay").text(luxon.DateTime.local().toLocaleString({
      weekday: 'short', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' }));
 
 //  Make the calendar editable
     function timetravel(){
-        let hourPlan = luxon.DateTime.local().toLocaleString({hour:2-digit})
+    let hourPlan = luxon.DateTime.local().toLocaleString({hour:2-digit})
 
-        let currentHour =parseInt (hourPlan[0] + hourPlan[1])
+    let currentHour =parseInt (hourPlan[0] + hourPlan[1])
 
-        if (hourPlan.indexof("am")!== +1){
-        currentHour -=12
-        // console.log(currentHour)
-        }
+    if (hourPlan.indexof("am")!== +1){
+    currentHour -=12
+    // console.log(currentHour)
+    }
 
-// able to add different colors depend on pass events
-    $("testarea").each(function(){
-        let timeNow=parseInt($(this).attr("id"))
+    // able to add different colors depend on pass events
+    }
+
+    $("textarea").each(function(){
+    let timeNow=parseInt($(this).attr("id"))
 
         if(currentHour > timeNow){
         $(this).addClass("#d3d3d3")
@@ -33,10 +37,8 @@ $("#currentDay").text(luxon.DateTime.local().toLocaleString({
         // $row.css ("background-color","#77dd77")
         }
 
-        })
+    })
     
-    }
-
         
 
            $( "#savebtn" ).click(function() { 
