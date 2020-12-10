@@ -1,5 +1,3 @@
-$(document).ready(function () {
-
     // interactive day planner
 
     $("#currentDay").text(luxon.DateTime.local().toLocaleString({
@@ -38,35 +36,31 @@ $(document).ready(function () {
         }
 
     })
-    
-        
-
-           $( "#savebtn" ).click(function() { 
-               console.log("yay it works")
+           
+// save message
+           
+           $( ".saveBtn" ).click(function() {
+           console.log("yay it works")
             //setting items in the local storage
-            localStorage.setItem("9", ($text9AM.val()))
-            localStorage.setItem("10", ($text10AM.val()))
-            localStorage.setItem("11", ($text11AM.val()))
-            localStorage.setItem("12", ($text12AM.val()))
-            localStorage.setItem("13", ($text1PM.val()))
-            localStorage.setItem("14", ($text2PM.val()))
-            localStorage.setItem("15", ($text3PM.val()))
-            localStorage.setItem("16", ($text4PM.val()))
-            localStorage.setItem("17", ($text5PM.val()))
-               
-            });
-            $("#text9AM").append(localStorage.getItem("9"));
-            $("#text10AM").append(localStorage.getItem("10"));
-            $("#text11AM").append(localStorage.getItem("11"));
-            $("#text12AM").append(localStorage.getItem("12"));
-            $("#text1PM").append(localStorage.getItem("13"));
-            $("#text2PM").append(localStorage.getItem("14"));
-            $("#text3PM").append(localStorage.getItem("15"));
-            $("#text4PM").append(localStorage.getItem("16"));
-            $("#text5PM").append(localStorage.getItem("17"));
-        
-         })
-
-
-
-
+                localStorage.setItem("9", $9am),
+                localStorage.setItem("10", $10am),
+                localStorage.setItem("11", $11am),
+                localStorage.setItem("12", $12pm),
+                localStorage.setItem("13", $1pm),
+                localStorage.setItem("14", $2pm),
+                localStorage.setItem("15", $3pm),
+                localStorage.setItem("16", $4pm),
+                localStorage.setItem("17", $5pm),
+           }),    
+           
+                $("#text9AM").append(localStorage.getItem("9")),
+                $("#text10AM").append(localStorage.getItem("10")),
+                $("#text11AM").append(localStorage.getItem("11")),
+                $("#text12AM").append(localStorage.getItem("12")),
+                $("#text1PM").append(localStorage.getItem("13")),
+                $("#text2PM").append(localStorage.getItem("14")),
+                $("#text3PM").append(localStorage.getItem("15")),
+                $("#text4PM").append(localStorage.getItem("16")),
+                $("#text5PM").append(localStorage.getItem("17")),
+        )
+           
