@@ -40,8 +40,7 @@ Javascript, CSS, HTML
 
 To run test, run the following commands:
 
-
-undefined
+https://neoblack91.github.io/DayPlanner/
 
 ## Questions
 
